@@ -179,17 +179,17 @@ value class RingStyle(val value:Int){
     val isValid get() = value in 0..3
     val next get() = RingStyle((value+1) % 4)
     val text get() = when(this){
-        PULSE -> "脉冲"
-        SPACING -> "间隔"
-        FLAT -> "平凡"
-        STATIC -> "不透明"
-        else -> "未知"
+        PULSE -> "Pulse"
+        SPACING -> "Spacing"
+        FLAT -> "Flat"
+        STATIC -> "Opaque"
+        else -> "Unknown"
     }
     val description get() = when(this){
-        PULSE -> "脉冲旋转效果。高亮部分由不透明度控制。脉冲最尖端不透明度为1"
-        SPACING -> "像虚线一样，间隔亮灭"
-        FLAT -> "只有半透明底色，无其他效果"
-        STATIC -> "只有不透明底色，无其他效果"
-        else -> "未知效果"
+        PULSE -> "Pulse rotation effect. The highlight is controlled by opacity. The tip of the pulse has opacity 1."
+        SPACING -> "Like dashed lines, alternating between bright and dark."
+        FLAT -> "Semi-transparent base color only, no other effects."
+        STATIC -> "Opaque base color only, no other effects."
+        else -> "Unknown effect."
     }
 }

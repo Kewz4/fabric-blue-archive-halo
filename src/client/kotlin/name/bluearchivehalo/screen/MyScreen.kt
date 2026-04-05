@@ -23,13 +23,13 @@ open class MyScreen(title: Text, val parent:Screen): Screen(title) {
         super.render(context, mouseX, mouseY, delta)
         context.drawCenteredTextWithShadow(textRenderer,title,width / 2, 15, 16777215)
     }
-    val pauseButton get() = ButtonWidget.builder(Text.of("暂停中")){
+    val pauseButton get() = ButtonWidget.builder(Text.of("Paused")){
         pause = !pause
-        it.message = Text.of(if(pause) "暂停中" else "运行中")
-    }.width(200).build() tooltip "查看动态效果（会运行游戏内时间）"
+        it.message = Text.of(if(pause) "Paused" else "Running")
+    }.width(200).build() tooltip "View dynamic effects (will advance in-game time)"
 
-    val previewButton get() = ButtonWidget.builder(Text.of("预览")){
-        client?.setScreen(object : MyScreen(Text.of("预览中，请自行调整游戏内视角"),this){
+    val previewButton get() = ButtonWidget.builder(Text.of("Preview")){
+        client?.setScreen(object : MyScreen(Text.of("Preview - adjust your in-game camera as needed"),this){
             val rememberHudStatus = MinecraftClient.getInstance().options.hudHidden
             init { MinecraftClient.getInstance().options.hudHidden = true }
             override fun close() {
@@ -50,7 +50,7 @@ open class MyScreen(title: Text, val parent:Screen): Screen(title) {
                 super.init()
             }
         })
-    }.width(200).build().also { it.active = client?.world != null } tooltip "清空界面，便于预览（仅游戏内）"
+    }.width(200).build().also { it.active = client?.world != null } tooltip "Clears the UI for easier preview (in-game only)"
 
 
     val done get() = ButtonWidget.builder(ScreenTexts.DONE) {

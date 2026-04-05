@@ -3,7 +3,7 @@
 	"id": "blue-archive-halo",
 	"version": "${version}",
 	"name": "Blue Archive Halo",
-	"description": "仿碧蓝档案光环。支持多数光影，安装modmenu以进入配置页面",
+	"description": "Blue Archive-style beacon halo. Supports most shaders; install modmenu to access the configuration page.",
 	"authors": [
 		"2894638479"
 	],

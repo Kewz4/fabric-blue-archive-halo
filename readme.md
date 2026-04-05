@@ -1,13 +1,13 @@
-纯客户端模组，同时修复了信标光束会重复渲染的bug。
+Pure client-side mod that also fixes the duplicate rendering bug of beacon beams.
 
 
-# 显示规则：
-### 等级
-光环样式会随信标等级变化，可以使用彩色玻璃染色。等级不一定等于光环数。
-### 等级衰减
-光环大小和圈数会随信标等阶增加，为控制实际显示圈数，等级会减去信标往上连续的 **无色透明玻璃/板** 个数。
+# Display Rules:
+### Level
+The halo style changes with the beacon level. You can use colored glass to dye it. The level does not necessarily equal the number of rings.
+### Level Decay
+The halo size and ring count increase with the beacon level. To control the actual number of rings displayed, the level is reduced by the number of consecutive **colorless transparent glass/panes** directly above the beacon.
 
-### 染色
-从前述的最后一个透明玻璃往上，每格 **信标光柱的颜色** ，依次从外环到内环染色。
+### Dyeing
+Starting from the last transparent glass block mentioned above, each block of **beacon beam color** upward is applied from the outer ring to the inner ring in sequence.
 
-不使用玻璃本身的颜色而是光柱的颜色，是为了防止颜色变化过于突兀。
+The beacon beam color is used instead of the glass block's own color to prevent jarring color transitions.
